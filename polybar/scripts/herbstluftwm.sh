@@ -11,13 +11,13 @@ print_tags() {
 			printf '%%{R} %s %%{R}' "$name"
 			;;
 		'+')
-			printf '%%{F#cccccc}%%{R} %s %%{R}%%{F-}' "$name"
+			printf '%%{F#ccc}%%{R} %s %%{R}%%{F-}' "$name"
 			;;
 		'!')
 			printf '%%{R} %s! %%{R}' "$name"
 			;;
 		'.')
-			printf '%%{F#cccccc} %s %%{F-}' "$name"
+			printf '%%{B#222}%%{F#ccc} %s %%{B- F-}' "$name"
 			;;
 		*)
 			printf ' %s ' "$name"
