@@ -27,7 +27,7 @@ export EDITOR=vim
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
-#alias lla='ls -la'
+alias lla='ls -la'
 #alias lh='ll -h'
 alias l=ls
 
@@ -41,3 +41,6 @@ alias disable='sudo systemctl disable'
 
 # df
 alias df='df -h'
+
+#
+alias hc='herbstclient'
