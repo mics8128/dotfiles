@@ -31,12 +31,18 @@ alert = #bd2c40
 width = 100%
 height = 36
 modules-left = herbstluftwm
-modules-right = battery cpu date
+modules-right = battery wlan cpu date
 
 module-margin-right = 2
 
 font-0 = Hack:style=Regular:pixelsize=18
-font-1 = FontAwesome:style=Regular:pixelsize=18
+;font-1 = Font Awesome 5 Pro,Font Awesome 5 Pro Light:style=Light:pixelsize=18
+font-1 = Font Awesome 5 Pro,Font Awesome 5 Pro Regular:style=Regular:pixelsize=18
+;font-1 = Font Awesome 5 Pro,Font Awesome 5 Pro Solid:style=Solid:pixelsize=18
+;font-1 = Font Awesome 5 Duotone,Font Awesome 5 Duotone Solid:style=Solid:pixelsize=18
+;font-1 = Font Awesome 5 Brands,Font Awesome 5 Brands Regular:style=Regular:pixelsize=18
+
+
 
 [module/herbstluftwm]
 ;https://gist.github.com/olmokramer/b28ff8ed5fd366e3ebb23b79915ec850
@@ -51,7 +57,7 @@ tail = true
 type = internal/cpu
 interval = 0.5
 
-format-prefix = " "
+format-prefix = " "
 format = <label> <ramp-coreload>
 label = %percentage:02%%
 
@@ -71,22 +77,16 @@ type = internal/network
 interface = wlp1s0
 interval = 1.0
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected = 
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 
 [module/date]
 type = internal/date
@@ -139,7 +139,7 @@ poll-interval = 5
 
 format-charging = <animation-charging><label-charging>
 format-discharging = <ramp-capacity><label-discharging>
-format-full =  <ramp-capacity><label-full>
+format-full =  <ramp-capacity><label-full>
 
 label-charging = " %percentage:02%%"
 label-discharging = " %percentage:02%%"
@@ -153,11 +153,11 @@ ramp-capacity-3 = 
 ramp-capacity-4 = 
 
 ; Only applies if <animation-charging> is used
-animation-charging-0 =  
-animation-charging-1 =  
-animation-charging-2 =  
-animation-charging-3 =  
-animation-charging-4 =  
+animation-charging-0 =  
+animation-charging-1 =  
+animation-charging-2 =  
+animation-charging-3 =  
+animation-charging-4 =  
 animation-charging-framerate = 500
 
 [settings]
