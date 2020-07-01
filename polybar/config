@@ -34,8 +34,8 @@ modules-right = battery cpu
 
 module-margin-right = 2
 
-font-0 = Hack:style=Regular
-font-1 = FontAwesome:style=Regular
+font-0 = Hack:style=Regular:pixelsize=20
+font-1 = FontAwesome:style=Regular:pixelsize=20
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
