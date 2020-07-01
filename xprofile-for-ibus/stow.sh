@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 #
 # Easy stow by Mics
-# v0.1
+# v0.2
 #
 
 
@@ -20,14 +20,4 @@ export ROOT="$HOME"
 export KEY="$1"
 export TARGET=$HOME/$PREFIX
 export SCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-case $KEY in
-"-D")
-    stow --dotfile --ignore="^stow\.sh$" --verbose \
-        --target="$TARGET" --delete .
-    ;;
-*)
-    mkdir -p $TARGET
-    stow --dotfile --ignore="^stow\.sh$" --verbose \
-        --target="$TARGET" .
-    ;;
-esac
+exec $SCRIPTPATH/../tools/stow.sh
