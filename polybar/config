@@ -55,7 +55,7 @@ tail = true
 [module/cpu]
 ;https://github.com/polybar/polybar/wiki/Module:-cpu
 type = internal/cpu
-interval = 0.5
+interval = 1.0
 
 format-prefix = " "
 format = <label> <ramp-coreload>
