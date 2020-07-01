@@ -263,9 +263,10 @@ format-underline = #4bffdc
 label = %percentage_used%%
 
 [module/wlan]
+;https://github.com/polybar/polybar/wiki/Module:-network
 type = internal/network
 interface = wlp1s0
-interval = 3.0
+interval = 1.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
