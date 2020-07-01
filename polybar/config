@@ -30,12 +30,13 @@ alert = #bd2c40
 [bar/gpd-top]
 width = 100%
 height = 36
+modules-left = herbstluftwm
 modules-right = battery cpu
 
 module-margin-right = 2
 
-font-0 = Hack:style=Regular:pixelsize=20
-font-1 = FontAwesome:style=Regular:pixelsize=20
+font-0 = Hack:style=Regular:pixelsize=18
+font-1 = FontAwesome:style=Regular:pixelsize=18
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -86,6 +87,14 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/herbstluftwm]
+;https://gist.github.com/olmokramer/b28ff8ed5fd366e3ebb23b79915ec850
+type = custom/script
+
+exec-if = ps -C herbstluftwm >/dev/null 2>&1
+exec = MONITOR=HDMI-0 ~/.config/polybar/scripts/herbstluftwm.sh
+tail = true
 
 [module/xwindow]
 type = internal/xwindow
