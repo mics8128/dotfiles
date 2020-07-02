@@ -131,3 +131,17 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# vi mode
+set -o vi
+
+# PATH
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# set PATH for composer vendor global tools bin
+if [ -d "$HOME/.config/composer/vendor/bin/" ] ; then
+    PATH="$HOME/.config/composer/vendor/bin/:$PATH"
+fi
