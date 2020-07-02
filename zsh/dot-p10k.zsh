@@ -1054,14 +1054,14 @@
   # Show PHP version only when in a PHP project subdirectory.
   typeset -g POWERLEVEL9K_PHP_VERSION_PROJECT_ONLY=true
   # Custom icon.
-  typeset -g POWERLEVEL9K_PHP_VERSION_VISUAL_IDENTIFIER_EXPANSION=''
+  typeset -g POWERLEVEL9K_PHP_VERSION_VISUAL_IDENTIFIER_EXPANSION=' '
 
   ##########[ laravel_version: laravel php framework version (https://laravel.com/) ]###########
   # Laravel version color.
   typeset -g POWERLEVEL9K_LARAVEL_VERSION_FOREGROUND=1
   typeset -g POWERLEVEL9K_LARAVEL_VERSION_BACKGROUND=7
   # Custom icon.
-  typeset -g POWERLEVEL9K_LARAVEL_VERSION_VISUAL_IDENTIFIER_EXPANSION=''
+  typeset -g POWERLEVEL9K_LARAVEL_VERSION_VISUAL_IDENTIFIER_EXPANSION=' '
 
   #############[ rbenv: ruby version from rbenv (https://github.com/rbenv/rbenv) ]##############
   # Rbenv color.
