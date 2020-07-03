@@ -1,28 +1,29 @@
-# default
+# 字體設定說明
+## default
 
 * serif
   * Noto Serif (英)
   * TW-Sung (中)
-  * Noto Serif CJK TC (補)
+  * Noto Serif CJK TC (日韓)
   
 * sans-serif
-  * Sarasa UI TC
+  * Sarasa UI TC (英中日韓)
   * Noto Sans CJK TC (備案)
   * Noto Sans (備案)
   
 * sans
-  * sans-serif (直接用無襯線):
+  * sans-serif (直接用無襯線)
   
 * monospace
-  * Hack
-  * Sarasa Mono TC (補)
+  * Hack (英)
+  * Sarasa Mono TC (中日韓)
   * Noto Sans Mono CJK TC (備案)
   * Noto Sans Mono (備案)
   
 * system-ui
   * sans-serif (直接用無襯線)
   
-# alias
+## alias
 
 * TW-Kai
   * KaiU
@@ -45,23 +46,26 @@
   * Helvetica
   
 * Noto Color Emoji
-  * include "emoji"
+  * contain "emoji"
   
-# 必要字體列表 (照重要性排序)
+## 字體列表
+
+此處皆依照 [AUR](https://aur.archlinux.org/) 或 [Archlinux Package](https://www.archlinux.org/packages/) 名稱，需要其他來源請自行尋找。
+
+### 必要 (照重要性排序)
 
 * ttf-hack (終端機字型)
 * noto-fonts (全部的備案都有它)
 * noto-fonts-cjk (全部的備案都有它)
 * ttf-sarasa-gothic (主要中文字型)
 * ttf-twcns-fonts (標楷體, 新細明體替代)
-* ttf-webhostinghub-glyphs
 
-# 表情 / 圖案字體
+### 表情 / 圖案字體
 
 * noto-fonts-emoji
 * ttf-font-awesome-pro
+* ttf-webhostinghub-glyphs
 
-# 好用字體列表
+### 其他好用字體列表
 
-* [taipei-sans-tc](https://sites.google.com/view/jtfoundry/)
-* [ttf-twcns-fonts](https://data.gov.tw/dataset/5961)
+* [ttf-jf-openhuninn](https://justfont.com/huninn/)
