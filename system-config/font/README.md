@@ -1,9 +1,9 @@
 # default
 
 * serif
-  * TW-Sung
+  * Noto Serif (英)
+  * TW-Sung (中)
   * Noto Serif CJK TC (補)
-  * Noto Serif (備案)
   
 * sans-serif
   * Sarasa UI TC
@@ -11,7 +11,7 @@
   * Noto Sans (備案)
   
 * sans
-  * sans-serif (直接用無襯線)
+  * sans-serif (直接用無襯線):
   
 * monospace
   * Hack
@@ -30,8 +30,9 @@
   * 標楷體
 
 * TW-Sung
+  * PMingLiU (英文是 Mono, 應該要是非 Mono, 但懶的修了)
+  * 新細明體 (英文是 Mono, 應該要是非 Mono, 但懶的修了)
   * MingLiU
-  * 新細明體
   * 細明體
   
 * Sarasa UI TC
@@ -46,15 +47,21 @@
 * Noto Color Emoji
   * include "emoji"
   
-# 字體列表 (照重要性排序)
+# 必要字體列表 (照重要性排序)
 
-* ttf-hack
-* noto-fonts
-* noto-fonts-cjk
-* ttf-sarasa-gothic
-* ttf-twcns-fonts
+* ttf-hack (終端機字型)
+* noto-fonts (全部的備案都有它)
+* noto-fonts-cjk (全部的備案都有它)
+* ttf-sarasa-gothic (主要中文字型)
+* ttf-twcns-fonts (標楷體, 新細明體替代)
+* ttf-webhostinghub-glyphs
 
-# 表情字體
+# 表情 / 圖案字體
 
 * noto-fonts-emoji
 * ttf-font-awesome-pro
+
+# 好用字體列表
+
+* [taipei-sans-tc](https://sites.google.com/view/jtfoundry/)
+* [ttf-twcns-fonts](https://data.gov.tw/dataset/5961)
