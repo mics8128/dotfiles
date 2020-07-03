@@ -46,8 +46,6 @@
 * Noto Color Emoji
   * include "emoji"
   
-
-
 # 字體列表 (照重要性排序)
 
 * ttf-hack
