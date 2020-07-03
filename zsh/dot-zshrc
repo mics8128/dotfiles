@@ -132,10 +132,18 @@ bindkey -M vicmd 'j' history-substring-search-down
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+#=================================
+# MICS CUSTOM START
+#=================================
+
+#===============
 # vi mode
+#===============
 set -o vi
 
+#===============
 # PATH
+#===============
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
@@ -145,3 +153,34 @@ fi
 if [ -d "$HOME/.config/composer/vendor/bin/" ] ; then
     PATH="$HOME/.config/composer/vendor/bin/:$PATH"
 fi
+
+#===============
+# custom alias
+#===============
+# ls
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+#alias lh='ll -h'
+alias l=ls
+
+# systemctl
+alias start='sudo systemctl start'
+alias stop='sudo systemctl stop'
+alias restart='sudo systemctl restart'
+alias status='sudo systemctl status'
+alias enable='sudo systemctl enable'
+alias disable='sudo systemctl disable'
+
+# df
+alias df='df -h'
+
+#
+alias hc='herbstclient'
+
+#===============
+# vars
+#===============
+export EDITOR=vim
+
