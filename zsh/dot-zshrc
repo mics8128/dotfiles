@@ -137,9 +137,10 @@ bindkey -M vicmd 'j' history-substring-search-down
 #=================================
 
 #===============
-# vi mode
+# vi mode & compatible for old function
 #===============
 set -o vi
+bindkey "^R" history-incremental-search-backward
 
 #===============
 # PATH
