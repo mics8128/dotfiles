@@ -15,10 +15,15 @@ zmodule zsh-users/zsh-history-substring-search  # Fish-like history search (up a
 
 # add by Mics
 
+# 必要
 zmodule archive
 zmodule romkatv/powerlevel10k
+
+# 獨立指令
 zmodule agkozak/zsh-z
-#zmodule zdharma/fast-syntax-highlighting
 zmodule supercrabtree/k
-#zmodule aloxaf/fzf-tab
 zmodule paulirish/git-open
+
+# 改變行為
+#zmodule zdharma/fast-syntax-highlighting
+#zmodule aloxaf/fzf-tab
