@@ -24,26 +24,5 @@ if [ -f $POWERLINE_SCRIPT ]; then
   . $POWERLINE_SCRIPT
 fi 
 
-export EDITOR=vim
-
-# ls
-alias ls='ls --color=auto'
-alias ll='ls -l'
-alias la='ls -a'
-alias lla='ls -la'
-#alias lh='ll -h'
-alias l=ls
-
-# systemctl
-alias start='sudo systemctl start'
-alias stop='sudo systemctl stop'
-alias restart='sudo systemctl restart'
-alias status='sudo systemctl status'
-alias enable='sudo systemctl enable'
-alias disable='sudo systemctl disable'
-
-# df
-alias df='df -h'
-
-#
-alias hc='herbstclient'
+# PATH & alias & env
+source $HOME/.my_sh_profile

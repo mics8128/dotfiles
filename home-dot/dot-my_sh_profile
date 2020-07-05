@@ -1,0 +1,65 @@
+# My Sh Profile By Mics
+# this file have to compatible to bash & zsh
+#
+#===============
+# PATH
+#===============
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+# set PATH for composer vendor global tools bin
+if [ -d "$HOME/.config/composer/vendor/bin/" ] ; then
+    PATH="$HOME/.config/composer/vendor/bin/:$PATH"
+fi
+
+#===============
+# custom alias
+#===============
+# ls
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+#alias lh='ll -h'
+alias l=ls
+
+# sudo replacer for alias
+if ! command -v sudo &> /dev/null; then
+    function su_sudo() {
+        echo "You didn't install sudo, replaced by su, please enter root password."
+        su -c "$*"
+    }
+    export SUDO_CMD=su_sudo
+else
+    export SUDO_CMD=sudo
+fi
+
+# systemctl
+if command -v systemctl &> /dev/null; then
+    alias start="$SUDO_CMD systemctl start"
+    alias stop="$SUDO_CMD systemctl stop"
+    alias restart="$SUDO_CMD systemctl restart"
+    alias status="$SUDO_CMD systemctl status"
+    alias enable="$SUDO_CMD systemctl enable"
+    alias disable="$SUDO_CMD systemctl disable"
+fi
+
+# df
+alias df='df -h'
+
+# run vi as vim
+command -v vim &> /dev/null && ! command -v vi &> /dev/null && alias vi='vim'
+
+# herb
+command -v herbstclient &> /dev/null && alias hc='herbstclient'
+
+# lazy
+command -v lazygit &> /dev/null && alias lg='lazygit'
+command -v lazydocker &> /dev/null && alias ld='lazydocker'
+
+#===============
+# env vars
+#===============
+export EDITOR=vim
