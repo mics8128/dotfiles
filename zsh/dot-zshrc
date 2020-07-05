@@ -182,22 +182,41 @@ alias lla='ls -la'
 #alias lh='ll -h'
 alias l=ls
 
+# sudo replacer for alias
+if ! command -v sudo &> /dev/null; then
+    function su_sudo() {
+        echo "You didn't install sudo, replaced by su, please enter root password."
+        su -c "$*"
+    }
+    export SUDO_CMD=su_sudo
+else
+    export SUDO_CMD=sudo
+fi
+
 # systemctl
-alias start='sudo systemctl start'
-alias stop='sudo systemctl stop'
-alias restart='sudo systemctl restart'
-alias status='sudo systemctl status'
-alias enable='sudo systemctl enable'
-alias disable='sudo systemctl disable'
+if command -v systemctl &> /dev/null; then
+    alias start="$SUDO_CMD systemctl start"
+    alias stop="$SUDO_CMD systemctl stop"
+    alias restart="$SUDO_CMD systemctl restart"
+    alias status="$SUDO_CMD systemctl status"
+    alias enable="$SUDO_CMD systemctl enable"
+    alias disable="$SUDO_CMD systemctl disable"
+fi
 
 # df
 alias df='df -h'
 
-#
-alias hc='herbstclient'
+# run vi as vim
+command -v vim &> /dev/null && ! command -v vi &> /dev/null && alias vi='vim'
+
+# herb
+command -v herbstclient &> /dev/null && alias hc='herbstclient'
+
+# lazy
+command -v lazygit &> /dev/null && alias lg='lazygit'
+command -v lazydocker &> /dev/null && alias ld='lazydocker'
 
 #===============
 # vars
 #===============
 export EDITOR=vim
-
