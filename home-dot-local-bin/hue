@@ -1,0 +1,51 @@
+#!/bin/env python3
+# -*- coding: utf-8 -*-
+
+import time
+from concurrent.futures import ThreadPoolExecutor
+
+def flash_light(light):
+    if(light.on == False): exit()
+    light.transitiontime = 0
+    light.brightness = 0
+    time.sleep(0.3)
+    light.brightness = 255
+
+if __name__ == "__main__":
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("action", type=str, choices = ['on', 'off', 'toggle', 'flash'])
+    args = parser.parse_args()
+
+    # 初始化 Hue
+    from phue import Bridge
+    b = Bridge('192.168.0.107')
+    
+    # 抓出我的燈
+    light_names = set(['Mics1', 'Mics2', 'Mics3'])
+    lights = [a for a in b.lights if a.name in light_names]
+
+    if args.action == 'on':
+        for light in lights:
+            light.on = True
+            light.bri = 255
+        exit()
+
+    if args.action == 'off':
+        for light in lights:
+            light.on = False
+        exit()
+
+    if args.action == 'toggle':
+        data = {}
+        for light in lights:
+            light.on = not(light.on)
+        exit()
+
+    if args.action == 'flash':
+        executors_list = []
+        with ThreadPoolExecutor(max_workers=5) as executor:
+            for light in lights:
+                executors_list.append(executor.submit(flash_light, light))
+        exit()
+

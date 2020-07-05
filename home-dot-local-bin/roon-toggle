@@ -1,0 +1,17 @@
+#!/bin/bash
+
+key="$1"
+
+case $key in
+    on)
+        pactl set-card-profile alsa_card.usb-Firestone_Audio_Co.__Ltd._I_Love_TW-01 off
+        sudo systemctl start roonserver.service
+    ;;
+    off)
+        sudo systemctl stop roonserver.service
+        pactl set-card-profile alsa_card.usb-Firestone_Audio_Co.__Ltd._I_Love_TW-01 output:analog-stereo
+    ;;
+    *)
+        echo please enter on or off
+    ;;
+esac
