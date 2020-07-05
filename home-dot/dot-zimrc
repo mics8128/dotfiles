@@ -27,3 +27,4 @@ zmodule paulirish/git-open
 # 改變行為
 #zmodule zdharma/fast-syntax-highlighting
 #zmodule aloxaf/fzf-tab
+zmodule softmoth/zsh-vim-mode
