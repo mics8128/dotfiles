@@ -139,4 +139,9 @@ bindkey -M vicmd 'j' history-substring-search-down
 # PATH & alias & env
 source $HOME/.my_sh_profile
 
+# config for zsh-autosuggestions
+# https://github.com/zsh-users/zsh-autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=10
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+export ZSH_AUTOSUGGEST_USE_ASYNC=true
+bindkey '^ ' autosuggest-accept
