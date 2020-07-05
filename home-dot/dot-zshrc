@@ -145,3 +145,7 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=10
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
 bindkey '^ ' autosuggest-accept
+
+# config for fzf-tab
+# https://github.com/aloxaf/fzf-tab
+command -v fzf &> /dev/null && enable-fzf-tab # only enable when fzf exist
