@@ -9,7 +9,7 @@
 # ============
 
 # where you want to put files
-export PREFIX='.config/alacritty' 
+export PREFIX='.config'
 # put $HOME or /
 export ROOT="$HOME"                
 
