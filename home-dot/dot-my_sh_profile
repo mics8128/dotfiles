@@ -59,6 +59,9 @@ command -v herbstclient &> /dev/null && alias hc='herbstclient'
 command -v lazygit &> /dev/null && alias lg='lazygit'
 command -v lazydocker &> /dev/null && alias ld='lazydocker'
 
+# zdict
+command -v zdict &> /dev/null && alias d='zdict'
+
 #===============
 # env vars
 #===============
