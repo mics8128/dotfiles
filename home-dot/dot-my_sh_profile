@@ -14,15 +14,19 @@ if [ -d "$HOME/.config/composer/vendor/bin/" ] ; then
     PATH="$HOME/.config/composer/vendor/bin/:$PATH"
 fi
 
+# set PATH for npm tools
+if [ -d "$HOME/.npm-global/bin" ] ; then
+    PATH=~/.npm-global/bin:$PATH
+fi
+
 #===============
 # custom alias
 #===============
 # ls
 alias ls='ls --color=auto'
-alias ll='ls -l'
+alias ll='ls -lh'
 alias la='ls -a'
-alias lla='ls -la'
-#alias lh='ll -h'
+alias lla='ls -lha'
 alias l=ls
 
 # sudo replacer for alias
@@ -61,6 +65,30 @@ command -v lazydocker &> /dev/null && alias ld='lazydocker'
 
 # zdict
 command -v zdict &> /dev/null && alias d='zdict'
+
+# git
+if command -v git &> /dev/null; then
+    alias checkout='git checkout'
+    alias clone='git clone'
+    alias commit='git commit'
+    alias add='git add'
+    alias gstatus='git status'
+    alias greset='git reset'
+    alias push='git push'
+    alias pull='git pull'
+fi
+
+# php & artisan
+if command -v php &> /dev/null; then
+    alias artisan='php artisan'
+    alias pa='php artisan'
+fi
+
+# composer
+if command -v composer &> /dev/null; then
+    alias cu='composer update'
+    alias ci='composer install'
+fi
 
 #===============
 # env vars
