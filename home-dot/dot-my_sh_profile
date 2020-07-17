@@ -66,6 +66,9 @@ command -v lazydocker &> /dev/null && alias ld='lazydocker'
 # zdict
 command -v zdict &> /dev/null && alias d='zdict'
 
+# startx
+command -v startx &> /dev/null && alias x='startx'
+
 # git
 if command -v git &> /dev/null; then
     alias checkout='git checkout'
