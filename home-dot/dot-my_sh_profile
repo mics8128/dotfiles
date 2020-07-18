@@ -53,8 +53,10 @@ fi
 # df
 alias df='df -h'
 
-# run vi as vim
-command -v vim &> /dev/null && ! command -v vi &> /dev/null && alias vi='vim'
+# run vi,vim as nvim
+command -v nvim &> /dev/null && alias vim='nvim'
+command -v nvim &> /dev/null && alias vi='nvim'
+
 
 # herb
 command -v herbstclient &> /dev/null && alias hc='herbstclient'
