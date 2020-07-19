@@ -101,5 +101,7 @@ command -v bw &> /dev/null && alias bwl='export BW_SESSION=$(bw unlock --raw)'
 #===============
 # env vars
 #===============
-export EDITOR=vim
-export VISUAL=vim
+command -v vim &> /dev/null && export EDITOR=vim
+command -v vim &> /dev/null && export VISUAL=vim
+command -v nvim &> /dev/null && export EDITOR=nvim
+command -v nvim &> /dev/null && export VISUAL=nvim
