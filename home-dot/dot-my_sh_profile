@@ -95,7 +95,11 @@ if command -v composer &> /dev/null; then
     alias ci='composer install'
 fi
 
+# bitwarden
+command -v bw &> /dev/null && alias bwl='export BW_SESSION=$(bw unlock --raw)'
+
 #===============
 # env vars
 #===============
 export EDITOR=vim
+export VISUAL=vim
