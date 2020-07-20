@@ -25,6 +25,10 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 
+" 搜尋
+set ignorecase
+set smartcase
+
 " Others
 set mouse=nv                    " set mouse on n and v mode work
 
