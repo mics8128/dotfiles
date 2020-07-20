@@ -1,12 +1,18 @@
-" Leaderf config
+" Leaderf
+" =======================
+" config
 let g:Lf_GtagsAutoGenerate = 1
 
-" Leaderf shortcut
+" shortcut
 let g:Lf_ShortcutF = "<leader>ff"
 nnoremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
 nnoremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags %s", "")<CR><CR>
 
+" vim-easymotion
+nmap <Leader>s <Plug>(easymotion-prefix)
+
 " coc
+" =======================
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
