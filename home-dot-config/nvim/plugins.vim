@@ -4,12 +4,17 @@
 let g:Lf_GtagsAutoGenerate = 1
 
 " shortcut
-let g:Lf_ShortcutF = "<leader>ff"
-nnoremap <leader>ft :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
-nnoremap <leader>fp :<C-U><C-R>=printf("Leaderf gtags %s", "")<CR><CR>
+let g:Lf_ShortcutF = "<leader>f"
+nnoremap <leader>t :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
+nnoremap <leader>p :<C-U><C-R>=printf("Leaderf gtags %s", "")<CR><CR>
+nnoremap <leader>F :<C-U><C-R>=printf("Leaderf! function %s", "")<CR><CR>
 
 " vim-easymotion
-nmap <Leader>s <Plug>(easymotion-prefix)
+nmap <Leader>s <Plug>(easymotion-s)
+nmap <Leader>j <Plug>(easymotion-j)
+nmap <Leader>k <Plug>(easymotion-k)
+nmap <Leader>w <Plug>(easymotion-W)
+nmap <Leader>b <Plug>(easymotion-B)
 
 " coc
 " =======================
@@ -35,7 +40,7 @@ else
 endif
 
 " Use K to show documentation in preview window.
-nnoremap <silent> <C-q> :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
