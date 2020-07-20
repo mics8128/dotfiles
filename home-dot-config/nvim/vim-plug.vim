@@ -5,5 +5,8 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 
+" Language support -- php blade (Laravel)
+Plug 'jwalton512/vim-blade'
+
 " Initialize plugin system
 call plug#end()
