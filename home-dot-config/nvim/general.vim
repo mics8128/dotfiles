@@ -1,6 +1,7 @@
 " Theme
+set termguicolors
 set background=dark
-colorscheme solarized
+colorscheme solarized8_flat
 
 " Show line numbers.
 set number
