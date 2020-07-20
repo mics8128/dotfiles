@@ -34,4 +34,4 @@ set mouse=nv                    " set mouse on n and v mode work
 
 " Leader mapping
 let mapleader=";"
-nnoremap <silent> <leader>/ :noh<CR>
+nnoremap <silent> <leader>/ :nohlsearch<CR>
