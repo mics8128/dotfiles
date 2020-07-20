@@ -1,13 +1,13 @@
 " Theme
 set termguicolors
 set background=dark
-colorscheme solarized8_flat
+colorscheme solarized8
 
 " Show line numbers.
 set number
 set relativenumber
 
-" 光標線
+" 游標線
 set cursorline
 
 " 折行
@@ -25,13 +25,8 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 
-" 搜尋
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-
 " Others
-set backspace=indent,eol,start  " allow backspacing over everything in insert mode
-set history=100                 " keep 50 lines of command line history
 set mouse=nv                    " set mouse on n and v mode work
+
+" Leader mapping
+let mapleader=";"
