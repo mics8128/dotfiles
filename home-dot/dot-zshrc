@@ -144,6 +144,7 @@ source $HOME/.my_sh_profile
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=10
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 export ZSH_AUTOSUGGEST_USE_ASYNC=true
+export ZSH_AUTOSUGGEST_HISTORY_IGNORE="rm *"
 bindkey '^ ' autosuggest-accept
 
 # config for fzf-tab
