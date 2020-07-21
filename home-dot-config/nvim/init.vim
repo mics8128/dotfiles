@@ -30,3 +30,5 @@ autocmd BufReadPost *
             \ if line("'\"") > 1 && line("'\"") <= line("$") |
             \   exe "normal! g`\"" |
             \ endif
+
+command! R source ~/.config/nvim/init.vim
