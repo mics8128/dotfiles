@@ -12,8 +12,9 @@ Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 " 增加效率
 Plug 'easymotion/vim-easymotion'
 
-" Language support -- php blade (Laravel)
-Plug 'jwalton512/vim-blade'
+" Language support
+Plug 'sheerun/vim-polyglot' "AIO
+Plug 'jwalton512/vim-blade' " Laravel blade
 
 " Initialize plugin system
 call plug#end()
