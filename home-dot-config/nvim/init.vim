@@ -5,18 +5,21 @@ set rtp+=~/.config/nvim/
 source ~/.config/nvim/vim-plug.vim
 source ~/.config/nvim/general.vim
 source ~/.config/nvim/plugins.vim
+source ~/.config/nvim/coc.vim
 
 " auto reload vimrc when editing it
 autocmd! bufwritepost ~/.config/nvim/init.vim source ~/.config/nvim/init.vim
 autocmd! bufwritepost ~/.config/nvim/vim-plug.vim source ~/.config/nvim/init.vim
 autocmd! bufwritepost ~/.config/nvim/general.vim source ~/.config/nvim/init.vim
 autocmd! bufwritepost ~/.config/nvim/plugins.vim source ~/.config/nvim/init.vim
+autocmd! bufwritepost ~/.config/nvim/coc.vim source ~/.config/nvim/init.vim
 
 " auto reload vimrc when editing it
 autocmd! bufwritepost ~/dotfiles/home-dot-config/nvim/init.vim source ~/.config/nvim/init.vim
 autocmd! bufwritepost ~/dotfiles/home-dot-config/nvim/vim-plug.vim source ~/.config/nvim/init.vim
 autocmd! bufwritepost ~/dotfiles/home-dot-config/nvim/general.vim source ~/.config/nvim/init.vim
 autocmd! bufwritepost ~/dotfiles/home-dot-config/nvim/plugins.vim source ~/.config/nvim/init.vim
+autocmd! bufwritepost ~/dotfiles/home-dot-config/nvim/coc.vim source ~/.config/nvim/init.vim
 
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler

@@ -13,7 +13,7 @@ Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'easymotion/vim-easymotion'
 
 " Language support
-Plug 'sheerun/vim-polyglot' "AIO
+Plug 'sheerun/vim-polyglot' " AIO
 Plug 'jwalton512/vim-blade' " Laravel blade
 
 " Initialize plugin system
