@@ -35,3 +35,9 @@ set mouse=nv                    " set mouse on n and v mode work
 " Leader mapping
 let mapleader=";"
 nnoremap <silent> <leader>/ :nohlsearch<CR>
+
+" command mapping jk for up down
+cnoremap <c-j> <down>
+cnoremap <c-k> <up>
+
+cnoremap rg Leaderf! rg --stayOpen<space>
