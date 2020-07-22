@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "coc-git": ">=1.8.1",
-    "coc-json": ">=1.2.6",
-    "coc-phpls": ">=2.1.9",
-    "coc-tsserver": ">=1.5.3"
-  }
-}
