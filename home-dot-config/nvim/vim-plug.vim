@@ -4,8 +4,8 @@
 let g:coc_global_extensions = []
 
 " Tools
-call add(g:coc_global_extensions, 'coc-git')
-call add(g:coc_global_extensions, 'coc-lists')
+" call add(g:coc_global_extensions, 'coc-git')
+" call add(g:coc_global_extensions, 'coc-lists')
 " call add(g:coc_global_extensions, 'coc-ultisnips')
 call add(g:coc_global_extensions, 'coc-highlight')
 
@@ -28,9 +28,12 @@ call plug#begin(stdpath('data') . '/plugged')
 " Theme
 Plug 'lifepillar/vim-solarized8'
 
+" 版本控制顯示
+Plug 'mhinz/vim-signify'
+
 " 自動補完/搜尋 (通用)
 Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': { -> coc#util#install() }}
-Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+Plug 'Yggdroot/LeaderF', {'do': './install.sh'}
 
 " 增加效率
 Plug 'easymotion/vim-easymotion'

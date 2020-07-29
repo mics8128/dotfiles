@@ -22,3 +22,10 @@ nmap <Leader>j <Plug>(easymotion-j)
 nmap <Leader>k <Plug>(easymotion-k)
 nmap <Leader>w <Plug>(easymotion-W)
 nmap <Leader>b <Plug>(easymotion-B)
+
+" vim-signify
+" =======================
+" shortcut
+" 感覺過沒幾天就忘了
+nmap <leader>gj <plug>(signify-next-hunk) 
+nmap <leader>gk <plug>(signify-prev-hunk) 
