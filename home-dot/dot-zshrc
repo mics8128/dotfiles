@@ -135,6 +135,8 @@ bindkey -M vicmd 'j' history-substring-search-down
 #=================================
 # MICS CUSTOM START
 #=================================
+# disable p10k configure wizard
+POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
 # PATH & alias & env
 source $HOME/.my_sh_profile
