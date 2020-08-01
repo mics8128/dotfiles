@@ -65,6 +65,7 @@ window#waybar.chromium {
     border-bottom: 3px solid #ffffff;
 }
 
+#window,
 #clock,
 #battery,
 #cpu,
