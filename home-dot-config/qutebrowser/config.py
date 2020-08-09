@@ -15,3 +15,6 @@ c.colors.webpage.darkmode.policy.images = "smart"
 c.colors.webpage.darkmode.threshold.text = 150
 c.colors.webpage.darkmode.threshold.background = 205
 c.colors.webpage.prefers_color_scheme_dark = True
+
+# search engine
+c.url.searchengines = {"DEFAULT": "https://www.google.com/search?q={}"}
