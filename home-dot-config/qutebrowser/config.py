@@ -2,6 +2,8 @@
 c.completion.shrink = True
 c.auto_save.session = True
 c.content.notifications = False
+c.content.geolocation = False
+c.content.headers.accept_language = "zh-TW,zh;q=0.8,zh-HK;q=0.7,zh-CN;q=0.5,en-US;q=0.3,en;q=0.2"
 c.content.pdfjs = True
 
 # tabs
