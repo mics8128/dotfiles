@@ -32,70 +32,90 @@ from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
 mod = "mod4"
+
+key_left = "h"
+key_down = "j"
+key_up = "k"
+key_right = "l"
+
 terminal = guess_terminal()
 
 keys = [
     # Switch between windows in current stack pane
-    Key([mod], "k", lazy.layout.down(),
+    Key([mod], key_left, lazy.layout.left(),
+        desc="Move focus left in stack pane"),
+    Key([mod], key_down, lazy.layout.down(),
         desc="Move focus down in stack pane"),
-    Key([mod], "j", lazy.layout.up(),
+    Key([mod], key_up, lazy.layout.up(),
         desc="Move focus up in stack pane"),
+    Key([mod], key_right, lazy.layout.right(),
+        desc="Move focus right in stack pane"),
 
     # Move windows up or down in current stack
-    Key([mod, "control"], "k", lazy.layout.shuffle_down(),
+    Key([mod, "shift"], key_left, lazy.layout.shuffle_left(),
+        desc="Move window left in current stack "),
+    Key([mod, "shift"], key_down, lazy.layout.shuffle_down(),
         desc="Move window down in current stack "),
-    Key([mod, "control"], "j", lazy.layout.shuffle_up(),
+    Key([mod, "shift"], key_up, lazy.layout.shuffle_up(),
         desc="Move window up in current stack "),
+    Key([mod, "shift"], key_right, lazy.layout.shuffle_right(),
+        desc="Move window right in current stack "),
+
+    # Toggle screen
+    Key([mod], "o",
+        lazy.to_screen(0)),
+    Key([mod], "p",
+        lazy.to_screen(1)),
 
     # Switch window focus to other pane(s) of stack
-    Key([mod], "space", lazy.layout.next(),
-        desc="Switch window focus to other pane(s) of stack"),
+    # Key([mod], "space", lazy.layout.next(),
+    #     desc="Switch window focus to other pane(s) of stack"),
 
     # Swap panes of split stack
-    Key([mod, "shift"], "space", lazy.layout.rotate(),
-        desc="Swap panes of split stack"),
+    # Key([mod, "shift"], "space", lazy.layout.rotate(),
+    #     desc="Swap panes of split stack"),
 
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
     # multiple stack panes
-    Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack"),
+    # Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
+    #     desc="Toggle between split and unsplit sides of stack"),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
 
     # Toggle between different layouts as defined below
-    Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
-    Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
+    # Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
+    Key([mod, "shift"], "w", lazy.window.kill(), desc="Kill focused window"),
 
-    Key([mod, "control"], "r", lazy.restart(), desc="Restart qtile"),
-    Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown qtile"),
+    Key([mod, "shift"], "r", lazy.restart(), desc="Restart qtile"),
+    Key([mod, "shift"], "q", lazy.shutdown(), desc="Shutdown qtile"),
     Key([mod], "r", lazy.spawncmd(),
         desc="Spawn a command using a prompt widget"),
 ]
 
-groups = [Group(i) for i in "asdfuiop"]
+groups = [Group(i) for i in "1234567890"]
 
 for i in groups:
     keys.extend([
         # mod1 + letter of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen(),
+        Key([mod], i.name, lazy.group[i.name].toscreen(toggle=False),
             desc="Switch to group {}".format(i.name)),
 
         # mod1 + shift + letter of group = switch to & move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
-            desc="Switch to & move focused window to group {}".format(i.name)),
+        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
+        #     desc="Switch to & move focused window to group {}".format(i.name)),
         # Or, use below if you prefer not to switch to that group.
         # # mod1 + shift + letter of group = move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-        #     desc="move focused window to group {}".format(i.name)),
+        Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+            desc="move focused window to group {}".format(i.name)),
     ])
 
 layouts = [
-    layout.Max(),
-    layout.Stack(num_stacks=2),
+    # layout.Max(),
+    # layout.Stack(num_stacks=2),
     # Try more layouts by unleashing below layouts.
     # layout.Bsp(),
-    # layout.Columns(),
+    layout.Columns(),
     # layout.Matrix(),
     # layout.MonadTall(),
     # layout.MonadWide(),
@@ -115,9 +135,9 @@ extension_defaults = widget_defaults.copy()
 
 screens = [
     Screen(
-        bottom=bar.Bar(
+        top=bar.Bar(
             [
-                widget.CurrentLayout(),
+                # widget.CurrentLayout(),
                 widget.GroupBox(),
                 widget.Prompt(),
                 widget.WindowName(),
@@ -127,15 +147,15 @@ screens = [
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("default config", name="default"),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                # widget.TextBox("default config", name="default"),
+                # widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
                 widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
                 widget.QuickExit(),
             ],
             24,
         ),
-    ),
+    )
 ]
 
 # Drag floating layouts.
