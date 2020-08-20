@@ -1,9 +1,12 @@
 #!/usr/bin/env bash 
 
 # ibus setting
-
 export XIM=ibus
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 ibus-daemon -drx
+
+# setup scale factor for QT
+[ -z ${QT_AUTO_SCREEN_SCALE_FACTOR+x} ] && export QT_AUTO_SCREEN_SCALE_FACTOR=0
+[ -z ${QT_SCREEN_SCALE_FACTORS+x} ] && export QT_SCREEN_SCALE_FACTORS=1.50
