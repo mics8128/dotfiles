@@ -1,0 +1,14 @@
+configuration {
+  modi: "window,drun,combi";
+  matching: "fuzzy";
+  // combi-modi: "window,drun";
+  theme: "solarized";
+  icon-theme: "Papirus";
+  show-icons: true;
+  drun-match-fields: "name,exec";
+  // display-window: "切換";
+  // display-drun: "啟動";
+  // window-format: "{c} {t}";
+  // window-match-fields: "class,title";
+  sort: true;
+}
