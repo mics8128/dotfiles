@@ -225,10 +225,14 @@ class Columns(Layout):
         else:
             color = self.group.qtile.color_pixel(self.border_normal if col.split
                                                  else self.border_normal_stack)
-        if len(self.columns) == 1 and (len(col) == 1 or not col.split):
-            border = 0
-        else:
-            border = self.border_width
+        #if len(self.columns) == 1 and (len(col) == 1 or not col.split):
+        #    border = 0
+        #else:
+        #    border = self.border_width
+
+        # change to always have border :)
+        border = self.border_width
+
         width = int(
             0.5 + col.width * screen_rect.width * 0.01 / len(self.columns))
         x = screen_rect.x + int(0.5 + pos * screen_rect.width * 0.01 / len(self.columns))
