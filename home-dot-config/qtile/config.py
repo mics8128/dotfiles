@@ -31,6 +31,8 @@ from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
+from layout.columns import Columns as myCloumns
+
 mod = "mod4"
 
 key_left = "h"
@@ -115,7 +117,7 @@ layouts = [
     # layout.Stack(num_stacks=2),
     # Try more layouts by unleashing below layouts.
     # layout.Bsp(),
-    layout.Columns(),
+    # layout.Columns(),
     # layout.Matrix(),
     # layout.MonadTall(),
     # layout.MonadWide(),
@@ -124,6 +126,7 @@ layouts = [
     # layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
+    myCloumns(),
 ]
 
 widget_defaults = dict(
