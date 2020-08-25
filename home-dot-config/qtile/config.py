@@ -31,8 +31,6 @@ from libqtile.config import Click, Drag, Group, Key, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-from layout.columns import Columns as myCloumns
-
 mod = "mod4"
 
 key_left = "h"
@@ -98,22 +96,22 @@ keys = [
     Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Launch Rofi"),
 ]
 
-groups = [Group(i) for i in "1234567890"]
+group_names = [("WWW", {'layout': 'monadtall'}),
+               ("DEV", {'layout': 'monadtall'}),
+               ("SYS", {'layout': 'monadtall'}),
+               ("DOC", {'layout': 'monadtall'}),
+               ("CHAT", {'layout': 'monadtall'}),
+               ("MUS", {'layout': 'monadtall'}),
+               ("VID", {'layout': 'monadtall'}),
+               ("GFX", {'layout': 'monadtall'})]
 
-for i in groups:
-    keys.extend([
-        # mod1 + letter of group = switch to group
-        Key([mod], i.name, lazy.group[i.name].toscreen(toggle=False),
-            desc="Switch to group {}".format(i.name)),
+groups = [Group(name, **kwargs) for name, kwargs in group_names]
 
-        # mod1 + shift + letter of group = switch to & move focused window to group
-        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
-        #     desc="Switch to & move focused window to group {}".format(i.name)),
-        # Or, use below if you prefer not to switch to that group.
-        # # mod1 + shift + letter of group = move focused window to group
-        Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-            desc="move focused window to group {}".format(i.name)),
-    ])
+for i, (name, kwargs) in enumerate(group_names, 1):
+    # Switch to another group
+    keys.append(Key([mod], str(i), lazy.group[name].toscreen(toggle=False)))
+    # Send current window to another group
+    keys.append(Key([mod, "shift"], str(i), lazy.window.togroup(name)))
 
 layouts = [
     # layout.Max(),
@@ -122,14 +120,13 @@ layouts = [
     # layout.Bsp(),
     # layout.Columns(),
     # layout.Matrix(),
-    # layout.MonadTall(),
+    layout.MonadTall(),
     # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
     # layout.VerticalTile(),
     # layout.Zoomy(),
-    myCloumns(),
 ]
 
 widget_defaults = dict(
