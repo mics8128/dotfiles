@@ -64,7 +64,7 @@ command -v herbstclient &> /dev/null && alias hc='herbstclient'
 
 # lazy
 command -v lazygit &> /dev/null && alias lg='lazygit'
-command -v lazydocker &> /dev/null && alias ld='lazydocker'
+command -v lazydocker &> /dev/null && alias ldo='lazydocker'
 
 # zdict
 command -v zdict &> /dev/null && alias d='zdict'
