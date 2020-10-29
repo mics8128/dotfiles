@@ -152,3 +152,9 @@ bindkey '^ ' autosuggest-accept
 # config for fzf-tab
 # https://github.com/aloxaf/fzf-tab
 command -v fzf &> /dev/null && enable-fzf-tab # only enable when fzf exist
+
+if [ -f "/etc/bash_completion.d/azure-cli" ] ; then
+    autoload bashcompinit
+    bashcompinit
+    source /etc/bash_completion.d/azure-cli
+fi
