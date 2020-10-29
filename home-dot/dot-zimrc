@@ -19,14 +19,14 @@ zmodule zsh-users/zsh-history-substring-search  # Fish-like history search (up a
 # ========================
 
 # 必要
-zmodule archive
+#zmodule archive
 zmodule romkatv/powerlevel10k
 
 # 獨立指令
-zmodule agkozak/zsh-z
-zmodule supercrabtree/k
-zmodule paulirish/git-open
+#zmodule agkozak/zsh-z
+#zmodule supercrabtree/k
+#zmodule paulirish/git-open
 
 # 改變行為
 #zmodule zdharma/fast-syntax-highlighting
-zmodule softmoth/zsh-vim-mode
+#zmodule softmoth/zsh-vim-mode
